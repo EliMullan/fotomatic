@@ -8,7 +8,6 @@ html {
 .main-content {
   position: relative;
   top: 5.3125rem; /* To offset for fixed header. */
-  background-image: url("../images/banner-landingpage.jpg");
 }
 
 .center {
@@ -27,15 +26,12 @@ html {
 
 .image-container img {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 760px) {
   .main-content {
-    top: 2.5625rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-       
+    top: 2.5625rem;         
   }
   
 }
@@ -52,7 +48,7 @@ header {
 header .content {
   display: flex;
   align-items: center;
-  padding:  1.875rem;
+  padding: 1.875rem;
 }
 
 header .logo {
@@ -120,14 +116,20 @@ header .mobile {
 /* Sign Up Section */
 
 #sign-up-section {
-  margin-left: 100px;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: 43.5rem;
+  background-image: url("../images/banner-landingpage.jpg");
+  background-size:cover;
+  background-position: bottom;
+  background-repeat: no-repeat;  
 }
 
 #sign-up-cta {
+  position:relative;
+  top: 171px;
+  left: 10%;
   padding: 0 5rem 2.5rem 5rem;
   border: solid 1px #979797;
   border-radius: 4px;
@@ -169,10 +171,8 @@ header .mobile {
   padding: 1.25rem 7.25rem;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 895px) {
   #sign-up-section {
-    display: flex;
-    justify-content: center;
     align-items: center;
     height: 28rem;
   }
@@ -202,10 +202,11 @@ header .mobile {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
+
   #sign-up-section {
     height: 20rem;
-  }
+ }
 
   #sign-up-cta h1 {
     font-size: 2.25rem;
@@ -239,24 +240,31 @@ header .mobile {
 }
 
 .feature h2 {
-  font-size: 2.5rem;
-  line-height: 1.2;
+  font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
   margin-top: 2.5rem;
+  padding-bottom: 5rem;
 }
 
 .feature h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.2;
   font-weight: 300;
   color: #4a4a4a;
-  margin-bottom: 2.5rem;
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 895px) {
+  #features-section {
+    padding: 1rem;
+    }
+  	
+  .feature {
+    margin: 0px .5rem;
+  	padding: 1rem;
+	}
   .feature h2 {
-    font-size: 1.125rem;
+    font-size: 2rem;
     line-height: 1.3;
     font-weight: normal;
   }
@@ -267,9 +275,9 @@ header .mobile {
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   #features-section {
-    flex-flow: row;
+    flex-flow: column;
     padding: 0;
   }
 
@@ -277,6 +285,12 @@ header .mobile {
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
   }
+
+  .feature .content {
+    padding: 1.25rem 0 1.875rem 0;
+  }
+
+
 }
 
 /* Filters Section */
@@ -305,12 +319,12 @@ header .mobile {
 }
 
 #filters-section .images-container {
-  display:inline-flex;
-  width: 100%;
+  display:flex;
+  max-width: 100%;
   padding: 0 1%;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   #filters-section {
     padding: 1.5rem 0 0 0;
   }
@@ -323,7 +337,7 @@ header .mobile {
     padding-bottom: .625rem;
     font-size: 1.125rem;
     line-height: 1.3;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   #filters-section .content h3 {
@@ -336,18 +350,22 @@ header .mobile {
     padding: 0;
   }
 
-  
+  #filters-section .extra {
+    display: none;  
+  }
 }
 
 /* Quotes Section */
 
 #quotes-section {
   background-color: #f3f3f3;
-  padding: 5rem;
 }
 
-#quotes-section content {
-  padding: 5rem;
+#quotes-section .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
 }
 
 #quotes-section .quote {
@@ -361,12 +379,12 @@ header .mobile {
 
 #quotes-section quote-citation {
   height: 1.875rem;
+ 
 }
 
 @media only screen and (max-width: 760px) {
   #quotes-section .content {
     padding: 1.875rem .625rem;
-    
   }
 
   #quotes-section .quote {
@@ -398,8 +416,8 @@ footer .copyright {
   flex-grow: 1;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 600px) {
   footer .content {
-    font-size: .8rem;
+    font-size: .625rem;
   }
 }
